@@ -1,0 +1,26 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kafka-role
+  namespace: scripting-services
+rules:
+  - apiGroups:
+        - ""
+        - apps
+        - autoscaling
+        - batch
+        - extensions
+        - policy
+        - rbac.authorization.k8s.io
+    resources:
+      - pods
+      - configmaps
+      - deployments
+      - ingress
+      - jobs
+      - namespaces
+      - nodes
+      - pods
+      - serviceaccounts
+      - services
+    verbs: ["get", "list", "watch", ]

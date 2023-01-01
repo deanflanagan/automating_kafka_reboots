@@ -1,0 +1,4 @@
+# BOOTSTRAP_SERVER: localhost # inherited from 'base' values.yaml
+KAFKA_ENVIRONMENT: dev
+ROLE_ARN: arn:aws:iam::<awsaccont>:role/KafkaRebootRole
+i__internal_spec_rules_0_host: localhost

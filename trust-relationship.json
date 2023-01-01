@@ -1,0 +1,18 @@
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": {
+        "Federated": "arn:aws:iam::<account-number>:oidc-provider/oidc.eks.us-east-1.amazonaws.com/id/<oidc-endpoint>"
+      },
+      "Action": "sts:AssumeRoleWithWebIdentity",
+      "Condition": {
+        "StringEquals": {
+          "oidc.eks.us-east-1.amazonaws.com/id/<oidc-endpoint>:aud": "sts.amazonaws.com",
+          "oidc.eks.us-east-1.amazonaws.com/id/<oidc-endpoint>:sub": "system:serviceaccount:scripting-tools:kafka-scripts-pod-service-account"
+        }
+      }
+    }
+  ]
+}

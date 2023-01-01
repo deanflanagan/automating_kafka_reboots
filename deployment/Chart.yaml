@@ -1,0 +1,5 @@
+apiVersion: v2
+type: application
+name: kafka-scripts-pod
+description: A Helm chart for kafka-scripts-pod to be used with harness
+version: 0.0.1

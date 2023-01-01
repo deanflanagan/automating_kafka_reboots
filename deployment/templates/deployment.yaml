@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: kafka-scripts-pod
+  name: kafka-scripts-pod
+  namespace: scripting-services
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: kafka-scripts-pod
+  strategy:
+    rollingUpdate:
+      maxSurge: 0
+      maxUnavailable: 1
+  template:
+    metadata:
+      labels:
+        app: kafka-scripts-pod
+    spec:
+      serviceAccountName: kafka-scripts-pod-service-account
+      containers:
+        - envFrom:
+            - configMapRef:
+                name: kafka-scripts-pod-env
+          image: {{ .Values.CONTAINER_IMAGE_NAME }}
+          imagePullPolicy: Always
+          name: kafka-scripts-pod
+          ports:
+            - containerPort: 8080

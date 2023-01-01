@@ -1,0 +1,13 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kafka-rolebinding
+  namespace: scripting-services 
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kafka-role
+subjects:
+- namespace: scripting-services 
+  kind: ServiceAccount
+  name: kafka-scripts-pod-service-account

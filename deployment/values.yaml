@@ -1,0 +1,4 @@
+BOOTSTRAP_SERVER: localhost
+KAFKA_ENVIRONMENT: production
+CONTAINER_IMAGE_NAME: <account>.dkr.ecr.us-east-1.amazonaws.com/kafka-scripts-pod:latest
+SLACK_TOKEN: 12345

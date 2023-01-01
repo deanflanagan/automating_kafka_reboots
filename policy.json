@@ -1,0 +1,17 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ssm:*",
+                "sts:*",
+                "ec2:describeInstances",
+                "ec2:stopInstances",
+                "ec2:startInstances",
+                "iam:ListRoles"
+            ],
+            "Resource": "*"
+        }
+    ]
+}

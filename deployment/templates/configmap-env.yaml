@@ -1,0 +1,12 @@
+apiVersion: v1
+data:
+  BOOTSTRAP_SERVER: {{ .Values.BOOTSTRAP_SERVER }}
+  HOST: 0.0.0.0
+  KAFKA_ENV: {{ .Values.KAFKA_ENVIRONMENT }}
+  NODE_ENV: production
+  PORT: '8080'
+  SLACK_TOKEN: {{ .Values.SLACK_TOKEN }}
+kind: ConfigMap
+metadata:
+  name: kafka-scripts-pod-env
+  namespace: scripting-services
